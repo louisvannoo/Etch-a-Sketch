@@ -10,8 +10,9 @@ html{
 body{
     background-color: grey;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
     height: 100%;
 
 }
@@ -27,3 +28,4 @@ body{
 .blue{
     background-color: darkblue;
 }
+

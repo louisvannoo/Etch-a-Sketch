@@ -1,8 +1,9 @@
-let squareNumber = 16*16;
+let squareNumber = 160*160;
 let squareDiv;
 const containerDiv = document.querySelector("div.container");
 const containerDimension = 900;
-const res = 16;
+const res = 160;
+let allSquares;
 
 
 
@@ -17,3 +18,12 @@ containerDiv.style.cssText = `height: ${containerDimension}px; width: ${containe
 
 containerDiv.addEventListener("mouseover", function( event ) {
     event.target.classList.add('blue')})
+
+const resetButton = document.querySelector("button")
+
+resetButton.addEventListener("click", () => {
+    allSquares = document.querySelectorAll("div.square")
+    allSquares.forEach(square => {
+        square.classList.remove('blue')
+    });
+})
