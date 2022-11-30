@@ -1,18 +1,22 @@
-let squareNumber = 160*160;
 let squareDiv;
 const containerDiv = document.querySelector("div.container");
 const containerDimension = 900;
-const res = 160;
+const rangeRes = document.querySelector("input#res");
+let res = 50;
+let squareNumber = res*res;
 let allSquares;
 
 
-
-for (let i =0; i<squareNumber; i++) {
+function genGrid() {
+    for (let i =0; i<squareNumber; i++) {
     squareDiv = document.createElement('div');
     squareDiv.classList.add('square'); 
     squareDiv.style.cssText = `height: ${containerDimension/res}px; width: ${containerDimension/res}px`;
     containerDiv.appendChild(squareDiv);
 }
+}
+
+genGrid();
 
 containerDiv.style.cssText = `height: ${containerDimension}px; width: ${containerDimension}px`;
 
@@ -22,8 +26,12 @@ containerDiv.addEventListener("mouseover", function( event ) {
 const resetButton = document.querySelector("button")
 
 resetButton.addEventListener("click", () => {
-    allSquares = document.querySelectorAll("div.square")
+    res = rangeRes.value;
+    console.log(res)
+    squareNumber = res*res;
+    allSquares = document.querySelectorAll("div.square");
     allSquares.forEach(square => {
-        square.classList.remove('blue')
+        containerDiv.removeChild(square)
     });
+    genGrid();
 })

@@ -29,3 +29,8 @@ body{
     background-color: darkblue;
 }
 
+.options{
+    display: flex;
+    justify-content: space-around;
+    width: 800px;
+}
